@@ -3,8 +3,7 @@ import { Route, withRouter } from "react-router-dom";
 import { Security, SecureRoute, LoginCallback } from "@okta/okta-react";
 import Navbar from "./components/layout/Navbar";
 import Login from "./components/pages/Login";
-import Enroll from "./components/pages/Enroll";
-import Dashboard from "./components/pages/Dashboard";
+import Dashboard from "./components/pages/dashboard/Dashboard";
 
 export default withRouter(
   class AppWithRouterAccess extends Component {
@@ -28,10 +27,10 @@ export default withRouter(
         >
           <div className="App">
             <Navbar />
-            <Route path="/register" exact={true} component={Enroll} />
+            <SecureRoute path="/" exact={true} component={Dashboard} />
             <SecureRoute path="/dashboard" exact={true} component={Dashboard} />
             <Route
-              path="/"
+              path="/login"
               exact={true}
               render={() => <Login baseUrl="https://dev-180584.okta.com" />}
             />
