@@ -12,6 +12,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from "@material-ui/core/styles";
+import { withOktaAuth } from "@okta/okta-react";
 
 const drawerWidth = 240;
 
@@ -39,14 +40,24 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     margin: 20
+  },
+  sidebar: {
+    transition: "all .2s ease-in-out",
+    '&:hover': {
+      transform: "scale(1.1)",
+      // boxShadow: "5px 5px 2px rgba(5, 5, 55, 0.3)"
+    }
   }
 }));
 
-export default function DashboardSidebar({ container, mobileOpen, handleDrawerToggle }) {
+function DashboardSidebar({ container, mobileOpen, handleDrawerToggle, authService }) {
   const classes = useStyles();
 
   const handleClick = (event) => {
-      console.log(event.target)
+    const { id } = event.currentTarget;
+    if (id === "logout") {
+      authService.logout();
+    }
   }
 
   const drawer = (
@@ -62,8 +73,8 @@ export default function DashboardSidebar({ container, mobileOpen, handleDrawerTo
           </CardContent>
       </Card>
       <List>
-        {["Battery", "Door", "Odometer", "Tires"].map((text, index) => (
-          <ListItem button key={text}>
+        {["Battery", "Location", "Lock/Unlock", "Odometer", "Tires"].map((text, index) => (
+          <ListItem button key={text} className={classes.sidebar}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
@@ -74,7 +85,7 @@ export default function DashboardSidebar({ container, mobileOpen, handleDrawerTo
       <Divider />
       <List>
         {["Account", "Settings", "Logout"].map((text, index) => (
-          <ListItem button key={text} onClick={handleClick}>
+          <ListItem button key={text} onClick={handleClick} className={classes.sidebar} id={text.toLowerCase()}>
             <ListItemIcon>
               {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
             </ListItemIcon>
@@ -120,3 +131,5 @@ export default function DashboardSidebar({ container, mobileOpen, handleDrawerTo
     </React.Fragment>
   );
 }
+
+export default withOktaAuth(DashboardSidebar);

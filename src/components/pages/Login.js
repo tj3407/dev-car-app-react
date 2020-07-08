@@ -20,6 +20,7 @@ function Login({ baseUrl, authState, authService }) {
   };
 
   const onSuccess = (res) => {
+    console.log(res)
     if (res.status === "SUCCESS") {
       return authService.redirect({
         sessionToken: res.session.token,
