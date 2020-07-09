@@ -16,6 +16,13 @@ export const GlobalStyles = createGlobalStyle`
   .MuiCardContent-root {
     background-color: ${({ theme }) => theme.cardHeader};
   }
+  #add-car-button {
+    color: ${({ theme }) => theme.addCarButtonText};
+    background: ${({ theme }) => theme.addCarButtonBackground};
+  }
+  #add-car-button:hover {
+    background: ${({ theme }) => theme.addCarButtonHover};
+  }
   #card-nav {
     .MuiPaper-root {
       background: ${({ theme }) => theme.background};
@@ -30,5 +37,10 @@ export const GlobalStyles = createGlobalStyle`
   }
   .MuiDivider-root {
     background: ${({ theme }) => theme.hr};
+  }
+  .MuiTypography-h1 {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    color: ${({ theme }) => theme.h1};
   }
 `;
