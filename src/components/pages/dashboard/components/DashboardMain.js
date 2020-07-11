@@ -56,10 +56,11 @@ const useStyles = makeStyles((theme) => ({
 
 export default function DashboardMain({ userData }) {
   const classes = useStyles();
+  const [vehicle, setVehicle] = React.useState();
 
   React.useEffect(() => {
-    console.log(userData);
-  });
+    console.log(userData, vehicle);
+  }, [vehicle]);
 
   const smartcar = new Smartcar({
     clientId: process.env.REACT_APP_CLIENT_ID,
@@ -72,6 +73,14 @@ export default function DashboardMain({ userData }) {
 
   function onComplete(err, code, status) {
     userData.updateScCode(code);
+    const result = fetch(`${process.env.REACT_APP_SERVER}/exchange?code=${code}`)
+    result.then((data) => {
+      console.log(data)
+      return fetch(`${process.env.REACT_APP_SERVER}/vehicle`);
+    })
+    .then(res => {
+      setVehicle(res.data);
+    });
   }
 
   function authorize() {

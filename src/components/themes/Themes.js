@@ -10,6 +10,7 @@ export const darkTheme = {
   addCarButtonText: "#fff",
   addCarButtonBackground: "#1bc943",
   addCarButtonHover: "#14a636",
+  appBarBackground: "#fff",
   background: "#253053 !important",
   body: "rgba(60,68,177,.15) !important",
   border: "1px solid white",

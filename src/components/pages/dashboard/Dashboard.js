@@ -1,11 +1,13 @@
 import React from "react";
 import { withOktaAuth } from "@okta/okta-react";
 import CssBaseline from "@material-ui/core/CssBaseline";
+import Grid from "@material-ui/core/Grid";
 import DashboardSidebar from "./components/DashboardSidebar";
 import DashboardHeader from "./components/DashboardHeader";
 import DashboardMain from "./components/DashboardMain";
 import { makeStyles } from "@material-ui/core/styles";
 import { UserContext } from "../../../context/user-context";
+import DashboardBottom from "./components/DashboardBottom";
 
 const drawerWidth = 240;
 
@@ -49,11 +51,14 @@ function Dashboard() {
             userData={userData}
           />
         </nav>
-        <DashboardHeader
-          mobileOpen={mobileOpen}
-          handleDrawerToggle={handleDrawerToggle}
-        />
-        <DashboardMain userData={userData} />
+        <Grid container direction="column">
+          <DashboardHeader
+            mobileOpen={mobileOpen}
+            handleDrawerToggle={handleDrawerToggle}
+          />
+          <DashboardMain userData={userData} />
+          <DashboardBottom />
+        </Grid>
       </div>)}
     </UserContext.Consumer>
   );

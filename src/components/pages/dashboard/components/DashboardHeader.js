@@ -27,7 +27,7 @@ export default function DashboardHeader({ handleDrawerToggle }) {
   const classes = useStyles();
   return (
     <React.Fragment>
-      <AppBar position="fixed" color="action" className={classes.appBar}>
+      <AppBar position="fixed" className={classes.appBar}>
         <Toolbar>
           <IconButton
             color="inherit"

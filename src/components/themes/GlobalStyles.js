@@ -6,9 +6,20 @@ export const GlobalStyles = createGlobalStyle`
     font-family: Tahoma, Helvetica, Arial, Roboto, sans-serif;
     transition: all 0.20s linear;
   }
+  header.MuiAppBar-colorPrimary {
+    background-color: ${({ theme }) => theme.appBarBackground};
+    color: ${({ theme }) => theme.cardText};
+  }
   .MuiDrawer-paper {
     color: ${({ theme }) => theme.text};
     background: ${({ theme }) => theme.background};
+  }
+  .MuiBottomNavigation-root {
+    color: ${({ theme }) => theme.text};
+    background: ${({ theme }) => theme.background};
+  }
+  .MuiBottomNavigationAction-root {
+    color: ${({ theme }) => theme.icon};
   }
   .MuiListItemIcon-root {
     color: ${({ theme }) => theme.icon};
