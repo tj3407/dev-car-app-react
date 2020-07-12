@@ -8,6 +8,7 @@ import Card from "@material-ui/core/Card";
 import CardContent from "@material-ui/core/CardContent";
 import Smartcar from "@smartcar/auth";
 import Button from "@material-ui/core/Button";
+import CircularProgress from "@material-ui/core/CircularProgress";
 
 const useStyles = makeStyles((theme) => ({
   // necessary for content to be below app bar
@@ -39,6 +40,8 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     margin: theme.spacing(2),
+    width: 160,
+    height: 45,
   },
   addIcon: {
     marginRight: theme.spacing(1),
@@ -51,16 +54,31 @@ const useStyles = makeStyles((theme) => ({
     height: 60,
     boxShadow:
       "0 0.46875rem 2.1875rem rgba(59,62,102,.03), 0 0.9375rem 1.40625rem rgba(59,62,102,.03), 0 0.25rem 0.53125rem rgba(59,62,102,.05), 0 0.125rem 0.1875rem rgba(59,62,102,.03)",
-  }
+  },
 }));
 
 export default function DashboardMain({ userData }) {
   const classes = useStyles();
-  const [vehicle, setVehicle] = React.useState();
+  const [status, setStatus] = React.useState("idle");
 
   React.useEffect(() => {
-    console.log(userData, vehicle);
-  }, [vehicle]);
+    if (userData.scCode) {
+      setStatus("pending");
+
+      fetch(
+        `${process.env.REACT_APP_SERVER}/api/exchange?code=${userData.scCode}`
+      )
+        .then(() => fetch(`${process.env.REACT_APP_SERVER}/api/vehicle`))
+        .then((res) => res.json())
+        .then((vehicles) => {
+          userData.updateContext("vehicles", vehicles);
+        });
+    }
+
+    if (userData.vehicles.length > 0) {
+      setStatus("success");
+    }
+  }, [userData]);
 
   const smartcar = new Smartcar({
     clientId: process.env.REACT_APP_CLIENT_ID,
@@ -68,23 +86,44 @@ export default function DashboardMain({ userData }) {
       "https://javascript-sdk.smartcar.com/v2/redirect?app_origin=http://localhost:3000",
     scope: ["required:read_vehicle_info"],
     testMode: true,
-    onComplete: onComplete,
+    onComplete,
   });
 
   function onComplete(err, code, status) {
-    userData.updateScCode(code);
-    const result = fetch(`${process.env.REACT_APP_SERVER}/exchange?code=${code}`)
-    result.then((data) => {
-      console.log(data)
-      return fetch(`${process.env.REACT_APP_SERVER}/vehicle`);
-    })
-    .then(res => {
-      setVehicle(res.data);
-    });
+    userData.updateContext("scCode", code);
   }
 
   function authorize() {
     smartcar.openDialog({ forcePrompt: true });
+  }
+
+  function renderAddCar() {
+    return (
+      <Card variant="outlined" className={classes.card}>
+        <CardContent>
+          <Typography variant="body1" className={classes.headerText}>
+            Your garage is currently empty. Add a car to get started.
+          </Typography>
+          <Button
+            variant="contained"
+            id="add-car-button"
+            size="large"
+            disableElevation
+            className={classes.icon}
+            onClick={authorize}
+          >
+            {status === "pending" ? (
+              <CircularProgress size={20} color="inherit" />
+            ) : (
+              <>
+                <AddBoxIcon className={classes.addIcon} />
+                Add Car
+              </>
+            )}
+          </Button>
+        </CardContent>
+      </Card>
+    );
   }
 
   return (
@@ -106,23 +145,7 @@ export default function DashboardMain({ userData }) {
         </Grid>
       </Grid>
       <Grid item xs={12}>
-        <Card variant="outlined" className={classes.card}>
-          <CardContent>
-            <Typography variant="body1" className={classes.headerText}>
-              Your garage is currently empty. Add a car to get started.
-            </Typography>
-            <Button
-              variant="contained"
-              id="add-car-button"
-              disableElevation
-              className={classes.icon}
-              onClick={authorize}
-            >
-              <AddBoxIcon className={classes.addIcon} />
-              Add Car
-            </Button>
-          </CardContent>
-        </Card>
+        {userData.vehicles.length === 0 ? renderAddCar() : null}
       </Grid>
     </main>
   );

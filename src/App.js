@@ -16,11 +16,12 @@ function App() {
 
   const [state, setState] = React.useState({
     scCode: '',
-    updateScCode
+    vehicles: [],
+    updateContext
   });
 
-  function updateScCode(code) {
-    setState({ ...state, scCode: code });
+  function updateContext(key, value) {
+    setState({ ...state, [key]: value });
   }
 
   return (
