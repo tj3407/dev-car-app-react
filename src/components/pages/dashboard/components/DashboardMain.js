@@ -9,6 +9,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Smartcar from "@smartcar/auth";
 import Button from "@material-ui/core/Button";
 import CircularProgress from "@material-ui/core/CircularProgress";
+import { UserContext } from "../../../../context/user-context";
 
 const useStyles = makeStyles((theme) => ({
   // necessary for content to be below app bar
@@ -57,11 +58,13 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function DashboardMain({ userData }) {
+export default function DashboardMain() {
+  const { userData, setUserData } = React.useContext(UserContext);
   const classes = useStyles();
   const [status, setStatus] = React.useState("idle");
 
   React.useEffect(() => {
+    console.log(userData)
     if (userData.scCode) {
       setStatus("pending");
 

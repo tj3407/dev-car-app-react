@@ -41,14 +41,12 @@ function Dashboard() {
   };
 
   return (
-    <UserContext.Consumer>
-      {userData => (<div className={classes.root}>
+      <div className={classes.root}>
         <CssBaseline />
         <nav className={classes.drawer} aria-label="profile sidebar">
           <DashboardSidebar
             mobileOpen={mobileOpen}
             handleDrawerToggle={handleDrawerToggle}
-            userData={userData}
           />
         </nav>
         <Grid container direction="column">
@@ -56,11 +54,10 @@ function Dashboard() {
             mobileOpen={mobileOpen}
             handleDrawerToggle={handleDrawerToggle}
           />
-          <DashboardMain userData={userData} />
+          <DashboardMain />
           <DashboardBottom />
         </Grid>
-      </div>)}
-    </UserContext.Consumer>
+      </div>
   );
 }
 

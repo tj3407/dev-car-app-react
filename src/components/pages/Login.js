@@ -2,9 +2,11 @@ import React from "react";
 import { Redirect } from "react-router-dom";
 import SignInWidget from "../auth/SignInWidget";
 import { withOktaAuth } from "@okta/okta-react";
-import Grid from "@material-ui/core/Grid";
+import { UserContext } from "../../context/user-context";
 
 function Login({ baseUrl, authState, authService }) {
+  const { userData, setUserData } = React.useContext(UserContext);
+  console.log(userData)
   const [authenticated, setAuthenticated] = React.useState(null);
 
   React.useEffect(() => {
@@ -13,15 +15,15 @@ function Login({ baseUrl, authState, authService }) {
 
   const checkAuthentication = () => {
     const isAuthenticated = authState.isAuthenticated;
-    console.log("checking authentication", isAuthenticated);
-    if (authenticated !== isAuthenticated) {
+    if (authenticated === null) {
       setAuthenticated(isAuthenticated);
     }
   };
 
   const onSuccess = (res) => {
-    console.log(res)
+    console.log(userData)
     if (res.status === "SUCCESS") {
+      userData.updateContext("profile", res.user);
       return authService.redirect({
         sessionToken: res.session.token,
       });

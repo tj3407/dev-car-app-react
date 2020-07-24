@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/themes/GlobalStyles";
 import { lightTheme, darkTheme } from "./components/themes/Themes";
 
-import { UserContext } from "./context/user-context";
+import { UserContextProvider } from "./context/user-context";
 import './App.css';
 
 function App() {
@@ -14,24 +14,27 @@ function App() {
     theme === "light" ? setTheme("dark") : setTheme("light");
   };
 
-  const [state, setState] = React.useState({
-    scCode: '',
-    vehicles: [],
-    updateContext
-  });
+  // const [state, setState] = React.useState({
+  //   scCode: '',
+  //   vehicles: [],
+  //   profile: {},
+  //   updateContext
+  // });
 
-  function updateContext(key, value) {
-    setState({ ...state, [key]: value });
-  }
+  // function updateContext(key, value) {
+  //   console.log(UserContext)
+  //   console.log(key, value)
+  //   setState({ ...state, [key]: value });
+  // }
 
   return (
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
-      <UserContext.Provider value={state}>
+      <UserContextProvider>
         <Router>
           <AppWithRouterAccess />
         </Router>
-      </UserContext.Provider>
+      </UserContextProvider>
     </ThemeProvider>
   );
 }
