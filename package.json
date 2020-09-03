@@ -5,8 +5,8 @@
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
-    "@okta/okta-react": "^3.0.2",
-    "@okta/okta-signin-widget": "^4.2.0",
+    "@okta/okta-react": "^3.0.4",
+    "@okta/okta-signin-widget": "^4.3.3",
     "@smartcar/auth": "^2.7.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.5.0",

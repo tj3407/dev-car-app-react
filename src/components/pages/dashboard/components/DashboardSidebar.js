@@ -94,7 +94,6 @@ function DashboardSidebar({
       <Card variant="outlined" className={classes.card}>
         <CardContent>
           <Avatar className={classes.avatar}>H</Avatar>
-          <span>John Doe</span>
           <br />
           <small>johndoe@mail.com</small>
         </CardContent>

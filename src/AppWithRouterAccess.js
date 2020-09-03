@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Route, withRouter } from "react-router-dom";
 import { Security, SecureRoute, LoginCallback } from "@okta/okta-react";
 import Navbar from "./components/layout/Navbar";
-import Login from "./components/pages/Login";
+import Login from "./components/pages/login/Login";
 import Dashboard from "./components/pages/dashboard/Dashboard";
 
 export default withRouter(

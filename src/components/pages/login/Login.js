@@ -1,8 +1,8 @@
 import React from "react";
 import { Redirect } from "react-router-dom";
-import SignInWidget from "../auth/SignInWidget";
+import SignInWidget from "../../auth/SignInWidget";
 import { withOktaAuth } from "@okta/okta-react";
-import { UserContext } from "../../context/user-context";
+import { UserContext } from "../../../context/user-context";
 
 function Login({ baseUrl, authState, authService }) {
   const { userData, setUserData } = React.useContext(UserContext);

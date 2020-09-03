@@ -43,6 +43,7 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(2),
     width: 160,
     height: 45,
+    borderRadius: 25,
   },
   addIcon: {
     marginRight: theme.spacing(1),
