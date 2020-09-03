@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import AppWithRouterAccess from './AppWithRouterAccess';
 import { ThemeProvider } from "styled-components";
 import { GlobalStyles } from "./components/themes/GlobalStyles";
@@ -31,9 +31,9 @@ function App() {
     <ThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
       <GlobalStyles />
       <UserContextProvider>
-        <Router>
+        <HashRouter basename="/">
           <AppWithRouterAccess />
-        </Router>
+        </HashRouter>
       </UserContextProvider>
     </ThemeProvider>
   );
