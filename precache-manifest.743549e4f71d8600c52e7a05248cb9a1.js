@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "dfe05e1507859299da6864e4d487c669",
+    "revision": "68f50f45fcf388416b631675f2d896a7",
     "url": "/dev-car-app-react/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dev-car-app-react/static/css/2.b6b1aafc.chunk.css"
   },
   {
-    "revision": "fcbfbb1dd8433c7f2349",
+    "revision": "04463bb6c6d2ca8482cd",
     "url": "/dev-car-app-react/static/css/main.ca7429fc.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/dev-car-app-react/static/js/2.ad9bf458.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "fcbfbb1dd8433c7f2349",
-    "url": "/dev-car-app-react/static/js/main.d126764b.chunk.js"
+    "revision": "04463bb6c6d2ca8482cd",
+    "url": "/dev-car-app-react/static/js/main.975c3d48.chunk.js"
   },
   {
     "revision": "25afee2b999f8080153f",
