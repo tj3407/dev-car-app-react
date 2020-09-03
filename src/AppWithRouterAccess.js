@@ -18,7 +18,7 @@ export default withRouter(
 
     render() {
       return (
-        <HashRouter basename='/dev-car-app-react'>
+        <HashRouter basename='/'>
           <Security
             issuer="https://dev-180584.okta.com/oauth2/default"
             clientId="0oajcll70QeukeMFF4x6"
