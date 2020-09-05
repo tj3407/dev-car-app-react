@@ -21,7 +21,7 @@ function Login({ baseUrl, authState, authService }) {
   };
 
   const onSuccess = (res) => {
-    console.log(userData)
+    console.log('userDate', userData)
     if (res.status === "SUCCESS") {
       userData.updateContext("profile", res.user);
       return authService.redirect({

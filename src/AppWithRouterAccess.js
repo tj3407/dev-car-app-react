@@ -21,7 +21,7 @@ export default withRouter(
         <Security
           issuer="https://dev-180584.okta.com/oauth2/default"
           clientId="0oajcll70QeukeMFF4x6"
-          redirectUri={window.location.origin + "/dev-car-app-react/implicit/callback"}
+          redirectUri={window.location.origin + "/implicit/callback"}
           onAuthRequired={this.onAuthRequired}
           pkce={true}
         >
