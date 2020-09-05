@@ -65,7 +65,6 @@ export default function DashboardMain() {
   const [status, setStatus] = React.useState("idle");
 
   React.useEffect(() => {
-    console.log(userData)
     if (userData.scCode) {
       setStatus("pending");
 

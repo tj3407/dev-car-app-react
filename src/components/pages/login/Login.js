@@ -6,7 +6,6 @@ import { UserContext } from "../../../context/user-context";
 
 function Login({ baseUrl, authState, authService }) {
   const { userData, setUserData } = React.useContext(UserContext);
-  console.log(userData)
   const [authenticated, setAuthenticated] = React.useState(null);
 
   React.useEffect(() => {
@@ -21,7 +20,6 @@ function Login({ baseUrl, authState, authService }) {
   };
 
   const onSuccess = (res) => {
-    console.log('userDate', userData)
     if (res.status === "SUCCESS") {
       userData.updateContext("profile", res.user);
       return authService.redirect({
