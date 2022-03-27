@@ -1082,6 +1082,13 @@
   dependencies:
     regenerator-runtime "^0.13.4"
 
+"@babel/runtime@^7.11.2":
+  version "7.17.8"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.17.8.tgz#3e56e4aff81befa55ac3ac6a0967349fd1c5bca2"
+  integrity sha512-dQpEpK0O9o6lj6oPu0gRDbbnk+4LeHlNcBpspf6Olzt3GIX4P1lWF1gS+pHLDFlaJvbR6q7jCfQ08zA4QJBnmA==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
 "@babel/template@^7.10.4", "@babel/template@^7.4.0", "@babel/template@^7.8.6":
   version "7.10.4"
   resolved "https://registry.yarnpkg.com/@babel/template/-/template-7.10.4.tgz#3251996c4200ebc71d1a8fc405fba940f36ba278"
@@ -1441,10 +1448,10 @@
   dependencies:
     lodash "^4.17.15"
 
-"@okta/okta-auth-js@^3.1.2":
-  version "3.2.1"
-  resolved "https://registry.yarnpkg.com/@okta/okta-auth-js/-/okta-auth-js-3.2.1.tgz#6420473787bb9821e35004eefc38aa50e9d65f47"
-  integrity sha512-aWxYLA6NXA5jk2PKhCAI6mBD326oLQB7l8Obw6Zkzk4OfAssDHnH4R1ieknAiEE/7s+dLtGasq94bIYBTCdWcw==
+"@okta/okta-auth-js@^3.2.6":
+  version "3.2.6"
+  resolved "https://registry.yarnpkg.com/@okta/okta-auth-js/-/okta-auth-js-3.2.6.tgz#9eb457ee46576ade2cab9c2524096f0c91f17edf"
+  integrity sha512-4N3XkaHUs2QbUR3ymg+PtoPAGluU3IkBK1kIfoYWeONXTyz0v/PpAKgHDe3RJkvRkDQzvAJDdT6VL29wIYE1ww==
   dependencies:
     Base64 "0.3.0"
     cross-fetch "^3.0.0"
@@ -1453,25 +1460,23 @@
     tiny-emitter "1.1.0"
     xhr2 "0.1.3"
 
-"@okta/okta-react@^3.0.2":
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/@okta/okta-react/-/okta-react-3.0.3.tgz#7e62cfbfed9cf29687bd794a89cae32e3f220b90"
-  integrity sha512-qz0Z9wwKlgjEHJB6dtBu5o2XyIMsSSPJ1Qwgu8y6RcuQrBaDM3HHTKCdaa3h9cZQ7rcF9WmbiTEVvbxAiGwwzw==
+"@okta/okta-react@^3.0.4":
+  version "3.0.11"
+  resolved "https://registry.yarnpkg.com/@okta/okta-react/-/okta-react-3.0.11.tgz#4ae5f78b19ddd3276637d4f83674eb9067deca4b"
+  integrity sha512-CYTF9vlujFSinbP0eq2/hu66vHNQrhmuxT7XOJHRJhS5Fvd55LJq2NeyNkIb3IJ9RgQD8YKkrX3nJ7B1DfrwIg==
   dependencies:
+    "@babel/runtime" "^7.11.2"
     "@okta/configuration-validation" "^0.4.1"
-    "@okta/okta-auth-js" "^3.1.2"
-    babel-runtime "^6.26.0"
-    prop-types "^15.5.10"
+    "@okta/okta-auth-js" "^3.2.6"
 
-"@okta/okta-signin-widget@^4.2.0":
-  version "4.2.3"
-  resolved "https://registry.yarnpkg.com/@okta/okta-signin-widget/-/okta-signin-widget-4.2.3.tgz#7c7ec04d424fe39ff8f2f5632c25cbc1343a8971"
-  integrity sha512-Y/jK7J7LPgxV5QHeIL0Lgx8oscb/3vzmX7TVDcGQNWYtmLs3ZHo/H6Bqc/JftydwX0j8HROEnKfw5oSQsltb/Q==
+"@okta/okta-signin-widget@^4.3.3":
+  version "4.5.2"
+  resolved "https://registry.yarnpkg.com/@okta/okta-signin-widget/-/okta-signin-widget-4.5.2.tgz#ae09ee651a9232b6bdcfdd300d8e5203473ddd92"
+  integrity sha512-Th5EQzEO02wQWcXPJZIdJ1GGxr90MrnnrRAfbx4eH3uOdow7nBEfhW2byzd1npVQhCNWKuTfRcjHaaYgZPPNEw==
   dependencies:
     "@babel/polyfill" "^7.10.1"
     "@babel/runtime" "^7.10.3"
     cross-fetch "^3.0.4"
-    eslint-plugin-jasmine "^4.1.0"
     handlebars "^4.5.3"
     q "1.4.1"
     u2f-api-polyfill "0.4.3"
@@ -2369,7 +2374,7 @@ async-limiter@~1.0.0:
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
   integrity sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
 
-async@^2.6.2:
+async@^2.6.1, async@^2.6.2:
   version "2.6.3"
   resolved "https://registry.yarnpkg.com/async/-/async-2.6.3.tgz#d72625e2344a3656e3a3ad4fa749fa83299d82ff"
   integrity sha512-zflvls11DCy+dQWzTW2dzuilv8Z5X/pjfmZOWba6TNIVDm+2UDaJmXSOXlasHKfNBs8oo3M0aT50fDEWfKZjXg==
@@ -3269,7 +3274,7 @@ combined-stream@^1.0.6, combined-stream@~1.0.6:
   dependencies:
     delayed-stream "~1.0.0"
 
-commander@^2.11.0, commander@^2.20.0:
+commander@^2.11.0, commander@^2.18.0, commander@^2.20.0:
   version "2.20.3"
   resolved "https://registry.yarnpkg.com/commander/-/commander-2.20.3.tgz#fd485e84c03eb4881c20722ba48035e8531aeb33"
   integrity sha512-GpVkmM8vF2vQUkj2LvZmD35JxeJOLCwJ9cUkugyk2nuhbv3+mJvpLYYt+0+USMxE+oj+ey/lJEnhZw75x/OMcQ==
@@ -4170,6 +4175,11 @@ elliptic@^6.0.0, elliptic@^6.5.2:
     minimalistic-assert "^1.0.0"
     minimalistic-crypto-utils "^1.0.0"
 
+email-addresses@^3.0.1:
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/email-addresses/-/email-addresses-3.1.0.tgz#cabf7e085cbdb63008a70319a74e6136188812fb"
+  integrity sha512-k0/r7GrWVL32kZlGwfPNgB2Y/mMXVTq/decgLczm/j34whdaspNrZO8CnXPf1laaHxI6ptUlsnAxN+UAPw+fzg==
+
 emoji-regex@^7.0.1, emoji-regex@^7.0.2:
   version "7.0.3"
   resolved "https://registry.yarnpkg.com/emoji-regex/-/emoji-regex-7.0.3.tgz#933a04052860c85e83c122479c4748a8e4c72156"
@@ -4377,11 +4387,6 @@ eslint-plugin-import@2.20.1:
     object.values "^1.1.0"
     read-pkg-up "^2.0.0"
     resolve "^1.12.0"
-
-eslint-plugin-jasmine@^4.1.0:
-  version "4.1.1"
-  resolved "https://registry.yarnpkg.com/eslint-plugin-jasmine/-/eslint-plugin-jasmine-4.1.1.tgz#afdf8ca6a91e85041d9e0fb650af446874bf8852"
-  integrity sha512-uS7kvt7RPUB/gLDwhJ/Ax0APrmkj7In8VJWkiZLYHafz2Ix74mMRJx82YZZ3zHRa/YOuTL+ig6dW/aKwdNzUuw==
 
 eslint-plugin-jsx-a11y@6.2.3:
   version "6.2.3"
@@ -4796,6 +4801,20 @@ file-uri-to-path@1.0.0:
   resolved "https://registry.yarnpkg.com/file-uri-to-path/-/file-uri-to-path-1.0.0.tgz#553a7b8446ff6f684359c445f1e37a05dacc33dd"
   integrity sha512-0Zt+s3L7Vf1biwWZ29aARiVYLx7iMGnEUl9x33fbB/j3jR81u/O2LbqK+Bm1CDSNDKVtJ/YjwY7TUd5SkeLQLw==
 
+filename-reserved-regex@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/filename-reserved-regex/-/filename-reserved-regex-2.0.0.tgz#abf73dfab735d045440abfea2d91f389ebbfa229"
+  integrity sha1-q/c9+rc10EVECr/qLZHzieu/oik=
+
+filenamify@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/filenamify/-/filenamify-4.3.0.tgz#62391cb58f02b09971c9d4f9d63b3cf9aba03106"
+  integrity sha512-hcFKyUG57yWGAzu1CMt/dPzYZuv+jAJUT85bL8mrXvNe6hWj6yEHEc4EdcgiA6Z3oi1/9wXJdZPXF2dZNgwgOg==
+  dependencies:
+    filename-reserved-regex "^2.0.0"
+    strip-outer "^1.0.1"
+    trim-repeated "^1.0.0"
+
 filesize@6.0.1:
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/filesize/-/filesize-6.0.1.tgz#f850b509909c7c86f7e450ea19006c31c2ed3d2f"
@@ -4853,6 +4872,15 @@ find-cache-dir@^3.2.0:
   version "3.3.1"
   resolved "https://registry.yarnpkg.com/find-cache-dir/-/find-cache-dir-3.3.1.tgz#89b33fad4a4670daa94f855f7fbe31d6d84fe880"
   integrity sha512-t2GDMt3oGC/v+BMwzmllWDuJF/xcDtE5j/fCGbqDD7OLuJkj0cfh1YSA5VKPvwMeLFLNDBkwOKZ2X85jGLVftQ==
+  dependencies:
+    commondir "^1.0.1"
+    make-dir "^3.0.2"
+    pkg-dir "^4.1.0"
+
+find-cache-dir@^3.3.1:
+  version "3.3.2"
+  resolved "https://registry.yarnpkg.com/find-cache-dir/-/find-cache-dir-3.3.2.tgz#b30c5b6eff0730731aea9bbd9dbecbd80256d64b"
+  integrity sha512-wXZV5emFEjrridIgED11OoUKLxiYjAcqot/NJdAkOhlJ+vGzwhOAfcG5OX1jP+S0PcjEn8bdMJv+g2jwQ3Onig==
   dependencies:
     commondir "^1.0.1"
     make-dir "^3.0.2"
@@ -5105,6 +5133,19 @@ getpass@^0.1.1:
   integrity sha1-Xv+OPmhNVprkyysSgmBOi6YhSfo=
   dependencies:
     assert-plus "^1.0.0"
+
+gh-pages@^3.1.0:
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/gh-pages/-/gh-pages-3.2.3.tgz#897e5f15e111f42af57d21d430b83e5cdf29472c"
+  integrity sha512-jA1PbapQ1jqzacECfjUaO9gV8uBgU6XNMV0oXLtfCX3haGLe5Atq8BxlrADhbD6/UdG9j6tZLWAkAybndOXTJg==
+  dependencies:
+    async "^2.6.1"
+    commander "^2.18.0"
+    email-addresses "^3.0.1"
+    filenamify "^4.3.0"
+    find-cache-dir "^3.3.1"
+    fs-extra "^8.1.0"
+    globby "^6.1.0"
 
 glob-parent@^3.1.0:
   version "3.1.0"
@@ -7221,9 +7262,9 @@ minimatch@3.0.4, minimatch@^3.0.4:
     brace-expansion "^1.1.7"
 
 minimist@^1.1.1, minimist@^1.2.0, minimist@^1.2.5:
-  version "1.2.5"
-  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.5.tgz#67d66014b66a6a8aaa0c083c5fd58df4e4e97602"
-  integrity sha512-FM9nNUYrRBAELZQT3xeZQ7fmMOBg6nWNmJKTcgsJeaLstP/UODVpGsr5OhXhhXg6f+qtJ8uiZ+PUxkDWcgIXLw==
+  version "1.2.6"
+  resolved "https://registry.yarnpkg.com/minimist/-/minimist-1.2.6.tgz#8637a5b759ea0d6e98702cfb3a9283323c93af44"
+  integrity sha512-Jsjnk4bw3YJqYzbdyBiNsPWHPfO++UGG749Cxs6peCu5Xg4nrena6OVxOYxrQTqww0Jmwt+Ref8rggumkTLz9Q==
 
 minipass-collect@^1.0.2:
   version "1.0.2"
@@ -8864,7 +8905,7 @@ prompts@^2.0.1:
     kleur "^3.0.3"
     sisteransi "^1.0.4"
 
-prop-types@^15.5.10, prop-types@^15.6.2, prop-types@^15.7.2:
+prop-types@^15.6.2, prop-types@^15.7.2:
   version "15.7.2"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.7.2.tgz#52c41e75b8c87e72b9d9360e0206b99dcbffa6c5"
   integrity sha512-8QQikdH7//R2vurIJSutZ1smHYTcLpRWEOlHnzcWHmBYrOGUysKwSsrC89BCiFj3CbrfJ/nXFdJepOVrY1GCHQ==
@@ -10345,6 +10386,13 @@ strip-json-comments@^3.0.1:
   resolved "https://registry.yarnpkg.com/strip-json-comments/-/strip-json-comments-3.1.1.tgz#31f1281b3832630434831c310c01cccda8cbe006"
   integrity sha512-6fPc+R4ihwqP6N/aIv2f1gMH8lOVtWQHoqC4yK6oSDVVocumAsfCqjkXnqiYMhmMwS/mEHLp7Vehlt3ql6lEig==
 
+strip-outer@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/strip-outer/-/strip-outer-1.0.1.tgz#b2fd2abf6604b9d1e6013057195df836b8a9d631"
+  integrity sha512-k55yxKHwaXnpYGsOzg4Vl8+tDrWylxDEpknGjhTiZB8dFRU5rTo9CAzeycivxV3s+zlTKwrs6WxMxR95n26kwg==
+  dependencies:
+    escape-string-regexp "^1.0.2"
+
 style-loader@0.23.1:
   version "0.23.1"
   resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-0.23.1.tgz#cb9154606f3e771ab6c4ab637026a1049174d925"
@@ -10625,6 +10673,13 @@ tr46@^1.0.1:
   integrity sha1-qLE/1r/SSJUZZ0zN5VujaTtwbQk=
   dependencies:
     punycode "^2.1.0"
+
+trim-repeated@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/trim-repeated/-/trim-repeated-1.0.0.tgz#e3646a2ea4e891312bf7eace6cfb05380bc01c21"
+  integrity sha1-42RqLqTokTEr9+rObPsFOAvAHCE=
+  dependencies:
+    escape-string-regexp "^1.0.2"
 
 ts-pnp@1.1.6:
   version "1.1.6"
